@@ -1,0 +1,120 @@
+Adidas 2021 Sales Performance Analysis
+
+Business Insights & Recommendations
+
+Project Overview
+
+For this project, I analyzed 8,342 Adidas sales records from 2021 using Excel, SQL, and Tableau. My goal was to see which regions, products, and retailers performed the best and how sales changed throughout the year.
+
+I also wanted to look beyond total revenue and understand which parts of the business generated the most gross profit. This helped me see how a business could use data to make better decisions about its products, retailers, and sales strategies.
+
+Key Performance Metrics
+
+Total Sales Revenue: $95,929,325.00
+
+Total Cost of Goods Sold: $57,719,862.38
+
+Total Gross Profit: $38,209,462.62
+
+Overall Gross Profit Margin: 39.83%
+
+Total Records Analyzed: 8,342
+
+Key Business Findings
+
+1. Regional Performance
+
+The West had the highest sales revenue at $26.42 million, followed by the Northeast at $19.27 million. What stood out to me was that the South had the highest gross profit margin at 45.52%, even though it didn't generate the most revenue. This showed me that a region bringing in more sales doesn't always mean it's the most profitable in percentage terms.
+
+2. Product Performance
+
+Men's Street Footwear was the best-selling category, generating $22.69 million in revenue and approximately $9.46 million in gross profit. However, Women's Apparel had the highest gross profit margin at 42.09%.
+
+I thought this was interesting because it showed the difference between a product bringing in the most money overall and a product keeping a higher percentage of its sales as gross profit.
+
+3. Retailer Performance
+
+Foot Locker generated the most revenue at $23.28 million, but Sports Direct had the highest gross profit at approximately $9.84 million and the highest gross profit margin at 43.48%.
+
+This was another example of why I believe businesses should look at more than just sales revenue when comparing performance.
+
+4. Monthly Sales Trends
+
+July had the highest sales revenue at $10.37 million, with December close behind at $10.34 million. March had the lowest sales at $5.22 million.
+
+Looking at the monthly results helped me identify periods when sales were stronger and weaker. I think this information could be useful when planning inventory and marketing, although I would want to analyze additional years before concluding that these patterns happen consistently.
+
+My Business Recommendations
+
+1. Look into expanding high-margin products
+
+Since Women's Apparel had the highest gross profit margin, I would recommend looking more closely at that category. Adidas could review customer demand and marketing opportunities to see whether increasing its focus on Women's Apparel could improve profitability.
+
+2. Study what makes Sports Direct successful
+
+Sports Direct had the highest gross profit and gross profit margin among the retailers. I would recommend reviewing its pricing, product mix, and sales performance to understand what makes it profitable compared with the other retailers.
+
+3. Prepare for stronger sales periods
+
+July and December had the highest revenue in the dataset. I would recommend using this information as a starting point for inventory and sales planning while comparing additional years of data to see whether these are consistent peak periods.
+
+4. Compare regional profitability
+
+The West led in revenue, but the South had the highest gross profit margin. I would recommend looking at differences in pricing, product mix, and costs to understand why the South performed better in terms of margin.
+
+How I Completed the Project
+
+Microsoft Excel
+
+I started by working with the Adidas sales dataset in Excel. I used PivotTables to organize the data and compare sales revenue, cost of goods sold, gross profit, and profit margins across regions, products, and retailers.
+
+I also created charts to make the results easier to understand and used the invoice dates to examine monthly sales trends.
+
+SQL
+
+After completing the Excel analysis, I exported the dataset as a CSV file so I could analyze it using SQL.
+
+One challenge I encountered was that some financial values were imported into SQLite as text because they contained commas. When I first tried adding the sales values together, the result was incorrect.
+
+To fix this, I used REPLACE to remove commas from the numbers and CAST to convert the values into a numeric format. After making that adjustment, my SQL revenue total matched the $95.93 million I calculated in Excel.
+
+CAST(REPLACE(sales, ',', '') AS REAL)
+This expression allowed SQL to read the sales amounts as numbers instead of text, which corrected my revenue calculations.
+
+I then used SQL queries with functions such as SUM, GROUP BY, and ORDER BY to compare revenue and profitability across different business categories.
+
+Tableau
+Once I finished the Excel and SQL analysis, I imported the dataset into Tableau Public.
+
+I created four visualizations showing sales by region, product, retailer, and month. I combined these into one dashboard and added an interactive regional filter.
+
+The filter allows someone viewing the dashboard to select a region and see how its products, retailers, and monthly sales performed. I also included the overall revenue, gross profit, and gross profit margin as full-year summary figures.
+
+Challenges and What I Learned
+
+One of the biggest challenges was getting the dataset into SQL correctly. My original sales calculation was wrong because SQLite wasn't treating the comma-formatted values as numbers. Fixing that issue helped me understand why checking data types is important before performing calculations.
+
+Another challenge was learning how to organize multiple Tableau charts into one dashboard. I had to adjust the layout, labels, and formatting to make the information easier to read.
+
+Overall, this project helped me understand how Excel, SQL, and Tableau can work together. I also learned that analyzing gross profit and profit margins can tell a different story than looking at revenue alone.
+
+Conclusion
+
+This project gave me hands-on experience working with a business dataset and turning the results into useful information. I was able to compare sales across different regions, product categories, retailers, and months while identifying differences in profitability.
+
+The biggest thing I learned was that being successful in sales doesn't automatically mean a product, retailer, or region has the highest profit margin. Looking at both revenue and profitability gives a better understanding of business performance.
+
+Tools Used
+
+Microsoft Excel: Data analysis, PivotTables, financial calculations, and charts
+
+SQL (SQLite): Data validation, aggregation, grouping, and profit margin analysis
+
+Tableau Public: Data visualization, interactive dashboard, and regional filtering
+
+Tableau Dashboard
+
+https://public.tableau.com/views/Adidas2021SalesPerformanceExcelSQLTableau/AdidasSalesDashboard
+
+Note: This project uses a practice dataset for educational and portfolio purposes. The findings reflect the supplied data, not verified Adidas corporate financial results.
+
